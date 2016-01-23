@@ -1,0 +1,16 @@
+[Unit]
+Description=ohm daemon for resource policy management
+DefaultDependencies=no
+Requires=dbus.socket
+Wants=sys-devices-sound.42-sound-card0-input4-event4.device
+After=local-fs.target systemd-udev-settle.service sys-devices-sound.42-sound-card0-input4-event4.device
+Conflicts=shutdown.target
+
+[Service]
+Type=dbus
+BusName=org.freedesktop.ohm
+ExecStart=/usr/sbin/ohmd --no-daemon
+ExecReload=/bin/kill -HUP $MAINPID
+
+[Install]
+WantedBy=basic.target

@@ -1,0 +1,15 @@
+[Unit]
+Description=Start wcnss_service
+Conflicts=shutdown.target actdead.target
+Before=wlan-modprobe.service
+ConditionPathExists=/system/bin
+ConditionPathExists=/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
+
+[Service]
+Type=simple
+ExecStart=/system/bin/wcnss_service
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target

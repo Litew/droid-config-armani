@@ -1,0 +1,13 @@
+KERNEL=="hw_random", NAME="hwrng", SYMLINK+="%k" MODE="0660"
+
+# Bluetooth
+ACTION=="add", KERNEL=="ttyHSL0", SUBSYSTEM=="tty", TAG+=systemd, ENV{SYSTEMD_ALIAS}+="/sys/devices/f991f000.serial/tty/ttyHSL0"
+
+# Wi-Fi
+ACTION=="add", SUBSYSTEM=="misc", DRIVERS=="wcnss_wlan", TAG+=systemd, ENV{SYSTEMD_ALIAS}+="/sys/devices/virtual/misc/wcnss_wlan"
+# SUBSYSTEM=="platform", ACTION=="add", DRIVERS=="WCNSS_CTRL", TAG+="systemd", ENV{SYSTEMD_WANTS}+="wcnss-wlan.service"
+
+# Headset Jack
+ACTION=="add", KERNEL=="event4", SUBSYSTEM=="input", TAG+="systemd", ENV{SYSTEMD_ALIAS}+="/sys/devices/sound.42/sound/card0/input4"
+
+

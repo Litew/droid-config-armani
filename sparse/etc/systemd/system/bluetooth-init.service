@@ -1,0 +1,17 @@
+[Unit]
+Description=Run hciattach when ttyHSL0 device becomes available
+Wants=sys-devices-f991f000.serial-tty-ttyHSL0.device
+Before=bluetooth.service
+After=sys-devices-f991f000.serial-tty-ttyHSL0.device
+ConditionPathExists=/firmware
+ConditionPathExists=/run
+
+[Service]
+Type=simple
+Restart=no
+RemainAfterExit=yes
+ExecStart=/bin/sh /usr/bin/droid/bluetooth-up.sh
+PIDFile=/run/hciattach.pid
+
+[Install]
+WantedBy=multi-user.target
