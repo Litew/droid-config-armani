@@ -9,6 +9,7 @@ Requires:
 - pattern:jolla-ui-configuration-armani
 
 - droid-hal-armani
+# - droid-hal-armani-detritus
 - droid-hal-armani-img-boot
 - droid-hal-armani-kernel-modules
 - droid-config-armani-sailfish
@@ -17,7 +18,9 @@ Requires:
 - droid-config-armani-preinit-plugin
 - droid-hal-version-armani
 
+- audioflingerglue
 - pulseaudio-modules-droid
+- pulseaudio-modules-droid-glue
 # for audio recording to work:
 - qt5-qtmultimedia-plugin-mediaservice-gstmediacapture
 
@@ -39,6 +42,9 @@ Requires:
 - gstreamer1.0-plugins-bad
 - nemo-gstreamer1.0-interfaces
 
+- gstreamer1.0-droid
+- droidmedia
+
 # This is needed for notification LEDs
 - mce-plugin-libhybris
 
@@ -59,6 +65,8 @@ Requires:
 
 # from update13, this is needed explicitly
 - bluez-configs-sailfish
+- obexd-configs-sailfish
+
 # hammerhead, grouper, and maguro use this in scripts, so include for all
 - rfkill
 
@@ -69,11 +77,11 @@ Requires:
 - jolla-settings-layout
 
 # For devices with working cellular modem:
-#- pattern:jolla-sailfish-cellular-apps
-#- telepathy-ring
+- pattern:jolla-sailfish-cellular-apps
+- telepathy-ring
 
 # For devices where test_gps eventually gets a fix:
-#- geoclue-provider-hybris-community
+- geoclue-provider-hybris-community
 
 Summary: Jolla HW Adaptation armani
 
