@@ -1,0 +1,1 @@
+ACTION=="add", KERNEL=="ttyHSL0", SUBSYSTEM=="tty", TAG+=systemd, ENV{SYSTEMD_ALIAS}+="/sys/devices/f991f000.serial/tty/ttyHSL0"
