@@ -14,4 +14,4 @@ ExecStart=/bin/sh /usr/bin/droid/bluetooth-up.sh
 PIDFile=/run/hciattach.pid
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=basic.target
