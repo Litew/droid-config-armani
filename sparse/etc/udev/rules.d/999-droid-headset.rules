@@ -1,2 +1,0 @@
-# Headset Jack
-ACTION=="add", KERNEL=="event4", SUBSYSTEM=="input", TAG+="systemd", ENV{SYSTEMD_ALIAS}+="/sys/devices/sound.42/sound/card0/input4"
