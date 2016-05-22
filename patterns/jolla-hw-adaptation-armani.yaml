@@ -8,11 +8,8 @@ Requires:
 - pattern:jolla-hw-adaptation-hybris-droid-vibrator
 - pattern:jolla-ui-configuration-armani
 
-# ff_memless
-- qt5-feedback-haptics-ffmemless
-
 - droid-hal-armani
-# - droid-hal-armani-detritus
+- droid-hal-armani-detritus
 - droid-hal-armani-img-boot
 - droid-hal-armani-kernel-modules
 - droid-config-armani-sailfish
