@@ -5,11 +5,11 @@ Conflicts=shutdown.target actdead.target
 [Service]
 Type=simple
 RemainAfterExit=yes
-ExecStartPre=/bin/touch /dev/wcnss_wlan
+ExecStartPre=/bin/sleep 5s
 ExecStart=/sbin/modprobe wlan
 ExecStop=/sbin/modprobe -r wlan
 Restart=on-failure
 RestartSec=2
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=basic.target

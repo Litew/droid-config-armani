@@ -9,7 +9,7 @@ Requires:
 - pattern:jolla-ui-configuration-armani
 
 - droid-hal-armani
-# - droid-hal-armani-detritus
+- droid-hal-armani-detritus
 - droid-hal-armani-img-boot
 - droid-hal-armani-kernel-modules
 - droid-config-armani-sailfish
