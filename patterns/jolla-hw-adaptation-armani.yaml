@@ -45,6 +45,9 @@ Requires:
 - gstreamer1.0-droid
 - droidmedia
 
+# FM Radio
+-qt5-qtmultimedia-plugin-mediaservice-irisradio
+
 # This is needed for notification LEDs
 - mce-plugin-libhybris
 
