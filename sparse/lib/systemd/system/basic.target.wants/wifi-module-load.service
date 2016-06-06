@@ -1,1 +1,1 @@
-/etc/systemd/system/wifi-module-load.service
+../wifi-module-load.service
