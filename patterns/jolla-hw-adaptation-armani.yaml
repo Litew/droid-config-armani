@@ -68,10 +68,6 @@ Requires:
 #- usb-moded-diag-mode-android
 - sd-utils
 
-# from update13, this is needed explicitly
-- bluez-configs-sailfish
-- obexd-configs-sailfish
-
 # hammerhead, grouper, and maguro use this in scripts, so include for all
 - rfkill
 
