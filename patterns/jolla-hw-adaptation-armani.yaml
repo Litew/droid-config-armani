@@ -89,5 +89,8 @@ Requires:
 - geoclue-provider-hybris
 - geoclue-provider-mlsdb
 
+# Flashlight
+- jolla-settings-system-flashlight
+
 Summary: Jolla HW Adaptation armani
 
