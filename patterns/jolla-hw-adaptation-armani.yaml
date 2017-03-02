@@ -4,10 +4,6 @@
 Description: Pattern with packages for armani HW Adaptation
 Name: jolla-hw-adaptation-armani
 Requires:
-- pattern:jolla-hw-adaptation-hybris
-- pattern:jolla-hw-adaptation-hybris-droid-vibrator
-- pattern:jolla-ui-configuration-armani
-
 - droid-hal-armani
 - droid-hal-armani-detritus
 - droid-hal-armani-img-boot
@@ -16,11 +12,29 @@ Requires:
 - droid-config-armani-pulseaudio-settings
 - droid-config-armani-policy-settings
 - droid-config-armani-preinit-plugin
+- droid-config-armani-flashing
+- droid-config-armani-bluez4
 - droid-hal-version-armani
 
-- audioflingerglue
+# Hybris packages
+- libhybris-libEGL
+- libhybris-libGLESv2
+- libhybris-libwayland-egl
+
+# Sensors
+- hybris-libsensorfw-qt5
+
+# Vibra
+#- ngfd-plugin-droid-vibrator
+#- qt5-feedback-haptics-droid-vibrator
+
+# Haptics/Vibra with ffmemless
+- qt5-feedback-haptics-ffmemless
+
+# Needed for /dev/touchscreen symlink
+- qt5-plugin-generic-evdev
+
 - pulseaudio-modules-droid
-- pulseaudio-modules-droid-glue
 # for audio recording to work:
 - qt5-qtmultimedia-plugin-mediaservice-gstmediacapture
 
@@ -29,25 +43,14 @@ Requires:
 - qt5-qpa-hwcomposer-plugin
 - qtscenegraph-adaptation
 
-# GStreamer v0.10 multimedia support is being deprecated
-#- gstreamer0.10-droidcamsrc
-#- gstreamer0.10-omx
-#- gstreamer0.10-droideglsink
-#- nemo-qtmultimedia-plugins-gstvideotexturebackend
-
 # Add GStreamer v1.0 as standard
 - gstreamer1.0
 - gstreamer1.0-plugins-good
 - gstreamer1.0-plugins-base
 - gstreamer1.0-plugins-bad
 - nemo-gstreamer1.0-interfaces
-
+# For devices with droidmedia and gst-droid built, see HADK pdf for more information
 - gstreamer1.0-droid
-- droidmedia
-
-# FM Radio
-- qt5-qtmultimedia-plugin-mediaservice-irisradio
-- jolla-mediaplayer-radio
 
 # This is needed for notification LEDs
 - mce-plugin-libhybris
@@ -57,15 +60,16 @@ Requires:
 - usb-moded
 - usb-moded-defaults-android
 - usb-moded-developer-mode-android
-- usb-moded-pc-suite-mode-android
 
 # Extra useful modes not officially supported:
 # might need some configuration to get working
-- usb-moded-mass-storage-android-config
+#- usb-moded-mass-storage-android-config
 # working but careful with roaming!
 - usb-moded-connection-sharing-android-config
 # android diag mode only usable for certain android tools
 #- usb-moded-diag-mode-android
+
+# SD card mounting
 - sd-utils
 
 # hammerhead, grouper, and maguro use this in scripts, so include for all
@@ -74,22 +78,15 @@ Requires:
 # enable device lock and allow to select untrusted software
 - jolla-devicelock-plugin-encsfa
 
-# Settings app needs this since update15
-- jolla-settings-layout
-
-# For devices with working cellular modem:
-- pattern:jolla-sailfish-cellular-apps
-- telepathy-ring
-
-# For devices where test_gps eventually gets a fix:
+# For GPS
 - geoclue-provider-hybris
-- geoclue-provider-mlsdb
 
-# Flashlight
-- jolla-settings-system-flashlight
+# For audio in calls
+- pulseaudio-modules-droid-glue
 
-# Multi-SIM settings
-- jolla-settings-networking-multisim
+# For FM radio on some QCOM devices
+- qt5-qtmultimedia-plugin-mediaservice-irisradio
+- jolla-mediaplayer-radio
 
 Summary: Jolla HW Adaptation armani
 
