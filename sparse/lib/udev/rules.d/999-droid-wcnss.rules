@@ -1,0 +1,3 @@
+KERNEL=="wcnss_ctrl", SYMLINK="wcnss_ctrl", TAG+="systemd"
+KERNEL=="wcnss_wlan", SYMLINK="wcnss_wlan", TAG+="systemd"
+
