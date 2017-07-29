@@ -1,15 +1,20 @@
 [Unit]
 Description=Load wifi module
+After=dev-wcnss_wlan.device init-done.service
 Conflicts=shutdown.target actdead.target
 
 [Service]
-Type=simple
+Environment=WCNSS_READY=/sys/devices/fb000000.qcom,wcnss-wlan/wcnss_ready
+
+Type=forking
 RemainAfterExit=yes
-ExecStartPre=/bin/sleep 5s
+ExecStartPre=/bin/sh -c "[ $(cat $WCNSS_READY) -eq '1' ]"
 ExecStart=/sbin/modprobe wlan
 ExecStop=/sbin/modprobe -r wlan
 Restart=on-failure
 RestartSec=2
+StartLimitBurst=15
 
 [Install]
 WantedBy=basic.target
+
