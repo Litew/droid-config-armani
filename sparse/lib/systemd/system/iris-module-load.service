@@ -1,0 +1,16 @@
+[Unit]
+Description=Load FM-radio module
+After=hcismd.service
+Conflicts=shutdown.target actdead.target
+
+[Service]
+Type=forking
+RemainAfterExit=yes
+ExecStart=/sbin/modprobe radio-iris-transport
+Restart=on-failure
+RestartSec=2
+StartLimitBurst=15
+
+[Install]
+WantedBy=bluetooth.service
+
