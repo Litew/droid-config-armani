@@ -13,7 +13,7 @@ Requires:
 - droid-config-armani-policy-settings
 - droid-config-armani-preinit-plugin
 - droid-config-armani-flashing
-- droid-config-armani-bluez4
+- droid-config-armani-bluez5
 - droid-hal-version-armani
 
 # Hybris packages
@@ -25,16 +25,14 @@ Requires:
 - hybris-libsensorfw-qt5
 
 # Vibra
-#- ngfd-plugin-droid-vibrator
-#- qt5-feedback-haptics-droid-vibrator
-
-# Haptics/Vibra with ffmemless
-- qt5-feedback-haptics-ffmemless
+- ngfd-plugin-native-vibrator
+- qt5-feedback-haptics-native-vibrator
 
 # Needed for /dev/touchscreen symlink
 - qt5-plugin-generic-evdev
 
 - pulseaudio-modules-droid
+- pulseaudio-modules-droid-glue
 # for audio recording to work:
 - qt5-qtmultimedia-plugin-mediaservice-gstmediacapture
 
@@ -69,9 +67,6 @@ Requires:
 # android diag mode only usable for certain android tools
 #- usb-moded-diag-mode-android
 
-# SD card mounting
-- sd-utils
-
 # hammerhead, grouper, and maguro use this in scripts, so include for all
 - rfkill
 
@@ -81,12 +76,15 @@ Requires:
 # For GPS
 - geoclue-provider-hybris
 
-# For audio in calls
-- pulseaudio-modules-droid-glue
-
 # For FM radio on some QCOM devices
 - qt5-qtmultimedia-plugin-mediaservice-irisradio
 - jolla-mediaplayer-radio
+
+# SD card
+- sd-utils
+
+# Flashlight
+- jolla-settings-system-flashlight
 
 Summary: Jolla HW Adaptation armani
 
